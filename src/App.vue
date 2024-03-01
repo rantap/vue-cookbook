@@ -8,7 +8,11 @@ const visible = ref(false)
 </script>
 
 <template>
-  <header class="mb-4 bg-orange-900">
+  <header class="mb-4 bg-orange-900 py-4 text-white sm:mb-8 sm:py-6">
+    <nav class="hidden sm:flex sm:justify-center">
+      <RouterLink class="mr-8" to="/">Home</RouterLink>
+      <RouterLink to="/about">About</RouterLink>
+    </nav>
     <div class="flex justify-end">
       <Sidebar v-model:visible="visible" header="Cookbook">
         <nav @click="visible = false" class="flex flex-col">
@@ -16,7 +20,7 @@ const visible = ref(false)
           <RouterLink to="/about">About</RouterLink>
         </nav>
       </Sidebar>
-      <Button class="my-4 mr-6" @click="visible = true">
+      <Button class="mr-6 sm:hidden" @click="visible = true">
         <i class="pi pi-bars text-4xl" />
       </Button>
     </div>
